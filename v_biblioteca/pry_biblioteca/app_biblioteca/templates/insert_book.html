@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Inserción de libro{% endblock %}
+
+{% block header %}
+
+<h1>Insertar un libro</h1>
+
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <label for="titleInput">Título del libro:</label>
+    <input type="text" name="title" id="titleInput">
+    <br>
+    <label for="authorSelect">Autor del libro:</label>
+    <select name="author" id="authorSelect">
+        <option value="none" selected disabled hidden>Selecciona un autor</option>
+        {% for author in authors %}
+        <option value="{{ author.id }}">{{ author.name }} {{ author.surname }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label for="routeInput">Ruta de la portada:</label>
+    <input type="text" name="route" id="routeInput" placeholder="Escriba únicamente el nombre de la imagen...">
+
+    <button type="submit">
+        Guardar libro
+    </button>
+</form>
+
+{% endblock %}

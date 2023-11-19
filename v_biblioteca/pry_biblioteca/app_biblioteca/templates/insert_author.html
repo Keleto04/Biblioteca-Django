@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Inserción de autor{% endblock %}
+
+{% block header %}
+
+<h1>Insertar un autor</h1>
+
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+{% csrf_token %}
+
+<label for="nameInput">Nombre del autor:</label>
+<input type="text" name="name" id="nameInput">
+<br>
+<label for="surnameInput">Apellido del autor:</label>
+<input type="text" name="surname" id="surnameInput">
+
+<button>
+    Guardar autor
+</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Modificación de libro{% endblock %}
+
+{% block header %}
+
+<h1>Modificar un libro</h1>
+
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <label for="titleInput">Título del libro:</label>
+    <input type="text" name="title" id="titleInput" value="{{ book.title }}"/>
+    <br>
+    <label for="authorSelect">Autor del libro:</label>
+    <select name="author" id="authorSelect">
+        {% for author in authors %}
+        {% if book.author.id == author.id %}
+        <option value="{{ author.id }}" selected>{{ author.name }} {{ author.surname }}</option>
+        {% elif book.author.id != author.id %}
+        <option value="{{ author.id }}">{{ author.name }} {{ author.surname }}</option>
+        {% endif %}
+        {% endfor %}
+    </select>
+    <br>
+    <label for="routeInput">Ruta de la portada:</label>
+    <input type="text" name="route" id="routeInput" placeholder="Escriba únicamente el nombre de la imagen..." value="{{ book.route }}">
+
+    <button type="submit">
+        Editar libro
+    </button>
+</form>
+
+{% endblock %}

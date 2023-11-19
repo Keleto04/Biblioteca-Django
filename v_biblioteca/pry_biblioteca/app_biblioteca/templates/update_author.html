@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Modificación de autor{% endblock %}
+
+{% block header %}
+
+<h1>Modificar un autor</h1>
+
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <label for="titleInput">Nombre del autor:</label>
+    <input type="text" name="name" id="titleInput" value="{{ author.name }}"/>
+    <br>
+    <label for="titleInput">Apellido del autor:</label>
+    <input type="text" name="surname" id="titleInput" value="{{ author.surname }}"/>
+
+    <button type="submit">
+        Editar autor
+    </button>
+</form>
+
+{% endblock %}

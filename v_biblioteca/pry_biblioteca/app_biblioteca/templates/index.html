@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block header %}
+
+<h1>Bienvenido a la biblioteca</h1>
+
+{% endblock %}
+
+{% block content %}
+
+<ul>
+    <li><a href="/authors">Haz click aquí para ver la lista de autores</a></li>
+    <li><a href="/books">Haz click aquí para ver la lista de libros</a></li>
+</ul>
+
+{% endblock %}

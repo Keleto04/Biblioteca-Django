@@ -1,0 +1,34 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #aaa;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    background-color: #014083;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+li a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-left: 0;
+}

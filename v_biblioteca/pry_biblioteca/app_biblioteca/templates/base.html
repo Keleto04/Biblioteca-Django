@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Biblioteca{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block head %} {% endblock %}
+</head>
+
+<body>
+    {% include 'partials/navbar.html' %}
+
+    <div id="header">
+        
+        {% block header %}
+        
+        <h1>Bienvenido a la biblioteca</h1>
+
+        {% endblock %}
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>Autor: Keleto</p>
+        <p>GitHub:
+            <a href="https://github.com/Keleto04">Keleto04</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

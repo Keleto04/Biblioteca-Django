@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lista de libros{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/books.css' %}">
+
+<script src="https://kit.fontawesome.com/665f7ca1ae.js" crossorigin="anonymous"></script>
+
+<script>
+  function confirmDelete(titulo, formId) {
+    if (confirm(`¿Deseas eliminar ${titulo}?`)) {
+      document.getElementById(formId).submit();
+    }
+  }
+</script>
+
+{% endblock %}
+
+{% block header %}
+
+<h1>Lista de libros</h1>
+
+<a href="{% url 'insert_book' %}" id="insert-book" title="Insertar libro">
+  <i class="fa-solid fa-plus"></i>
+</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="main-content">
+  <ul>
+    {% for book in books %}
+    <li>
+
+      <div id="book-info">
+        <img id="book-cover" src="{% static book.route %}" alt="Portada del libro" title="{{ book.title }}">
+        <div id="book-title">{{ book.title }} - {{ book.author }}</div>
+      </div>
+
+      <div id="controls-div">
+        <!-- <form method="post" action="{% url 'update_book' book.id %}" id="update-{{ book.id }}">
+          {% csrf_token %}
+          <button type="submit" id="edit-button" title="Actualizar libro">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+        </form> -->
+
+        <a href="{% url 'update_book' book.id %}" id="edit-book" title="Editar libro">
+          <i class="fa-regular fa-pen-to-square"></i>
+        </a>
+
+
+        <form method="post" action="{% url 'delete_book' book.id %}" id="delete-{{ book.id }}">
+          {% csrf_token %}
+          <button type="button" id="delete-book"
+            onclick="confirmDelete('{{ book.title }}', 'delete-{{ book.id }}')" title="Eliminar libro">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </form>
+      </div>
+
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

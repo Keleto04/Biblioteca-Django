@@ -1,0 +1,98 @@
+#header #insert-book {
+    margin-right: 40px;
+    padding: 4px 7px;
+    color: black;
+    background-color: rgb(0, 141, 0);
+    border-radius: 5px;
+    font-size: 25px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#insert-book:hover {
+    transform: rotate(90deg);
+}
+
+#main-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+#main-content li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 10px;
+    padding: 10px;
+    background-color: rgba(5, 253, 170, 0.264);
+    border: 1px solid #4b4b4b;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #aaa;
+}
+
+#book-info {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+#book-cover {
+    max-height: 100px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#book-title {
+    margin-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#controls-div {
+    display: flex;
+    border-radius: 5px;
+    padding: 15px 10px;
+    background-color: aliceblue;
+}
+
+#controls-div form {
+    margin: 0 10px;
+}
+
+#controls-div button{
+    padding: 0;
+    font-size: 25px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#controls-div a {
+    font-size: 25px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#controls-div .fa-trash {
+    color: #e10909;
+    transition: 0.2s;
+}
+
+#controls-div .fa-trash:hover,
+#controls-div .fa-trash:active {
+    color: #ce0000;
+    transition: 0.2s;
+}
+
+#controls-div .fa-pen-to-square {
+    color: #2307d6;
+    transition: 0.2s;
+}
+
+#controls-div .fa-pen-to-square:hover,
+#controls-div .fa-pen-to-square:active {
+    color: #200aad;
+    transition: 0.2s;
+}
